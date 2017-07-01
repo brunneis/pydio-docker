@@ -1,0 +1,19 @@
+version: '2'
+services:
+    mariadb:
+        image: mariadb
+        container_name: pydio-database
+        volumes:
+            - /var/lib/mysql
+        environment:
+            MYSQL_DATABASE: pydio
+            MYSQL_USER: pydio
+            MYSQL_PASSWORD: pydio
+    pydio:
+        image: brunneis/pydio-centos
+        container_name: pydio-core
+        volumes:
+            - /var/www/html/data/files
+            - /var/www/html/data/personal
+        ports:
+            - 80:80
