@@ -9,6 +9,7 @@ services:
             MYSQL_DATABASE: pydio
             MYSQL_USER: pydio
             MYSQL_PASSWORD: pydio
+            MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
     pydio:
         image: brunneis/pydio-centos
         container_name: pydio-core
